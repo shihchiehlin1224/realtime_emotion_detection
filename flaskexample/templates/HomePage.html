@@ -1,0 +1,221 @@
+<!Doctype html>
+<html>
+
+<head>
+    <title>Home Page</title>
+    <link href="../static/css/example_page.css" rel="stylesheet">
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+
+    <style type="text/css">
+        #try {
+            color: #000000;
+            text-align: center;
+            /*padding-top: 15px;*/
+            font-size: 20px;
+            /*font-family: 'Raleway', cursive;*/
+            padding: 0px;
+        }
+
+        #seperate{
+            padding: 0px;
+        }
+        
+  /*      #btn {
+            color: #000000;
+            text-align: center;
+            font-size: 20px;
+            /*font-family: 'Caveat', cursive;*/
+        /*}*/
+        
+        .header {
+            color: #ffffff;
+            text-align: center;
+            font-size: 40px;
+            font-family: 'Raleway', cursive;
+            padding-top: 5px
+        }
+        
+        .jumbotron {
+            margin: 50px auto 10px auto;
+            padding: 10px;
+        }
+        
+        .title {
+            font-size: 20px;
+        }
+        
+        .face {
+            padding: 10px 0px 10px 0px;
+        }
+        .navbar{
+            font-size: 18px;
+        }
+        
+        video {
+            padding: 5px;
+            width: 320px !important;
+            height: 220px !important;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown active">
+                    <a class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Example List</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a class="dropdown-item" href="/Example1">Example 1</a>
+                        <a class="dropdown-item" href="/Example2">Example 2</a>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <div class="jumbotron" style="background-color: #808080" >
+        <blockquote class="blockquote text-center">
+            <h1 class="header">Happy Or Not</h1>
+            <h1 class="header" style="color: #000000">Real Time Emotion Detection</h1>
+            <footer class="blockquote-footer">
+                <cite title="Source Title" style="color: #000000">Empower Customer's Experiece With Computer Vision</cite>
+            </footer>
+        </blockquote>
+        <!-- <hr class="my-4"> -->
+    </div>
+
+
+    <div class="container" style = "margin-top: 25px">
+        <div class="row">
+            <div class="col-12 col-md-8" style="text-align: center">
+                <span id="try">Model: Andrew Buccilli (Insight Fellow)</span>
+                <!-- video files -->
+                <div class="row">
+                    <div class="col-sm">
+                        <center>
+                            <div class="col-sm">
+                                <video class="user" controls>
+                                      <source src="../static/video/Andrew_Face.mp4" type="video/mp4">
+                                    </video>
+                                <span id="try">Identity Recognition</span>
+                            </div>
+                        </center>
+                    </div>
+                    <div class="col-sm">
+                        <center>
+                            <div class="col-sm">
+                                <video class="user" controls>
+                                      <source src="../static/video/Andrew_emotion.mp4" type="video/mp4">
+                                    </video>
+                                <span id="try">Real-time Emotion</span>
+                            </div>
+                        </center>
+                    </div>
+                </div>
+                <p></p>
+                <div style="text-align: center" >
+                    <button id="btn_user" type="button" class="btn btn-outline-dark" style="font-size: 20px">Play Preloaded Videos</button>
+                </div>
+            </div>
+
+            <!-- gallery images -->
+            <div class="col-6 col-md-4" style="text-align: center">
+                <span id="try">Try Yourself!</span>
+
+
+
+                <!-- the upload section -->
+                <form action = "/user" method = "POST" enctype = "multipart/form-data">
+                    <div class="input-group mb-3">
+                        <div class="custom-file">
+                            <input type="file" name="file" class="custom-file-input" id="input">
+                            <label id = "filename"class="custom-file-label" for="customFileLang"
+                            >Choose Video file</label>
+                        </div>
+                    </div>
+                    <input type = "submit" class="btn btn-outline-dark" data-toggle="tooltip" data-placement="bottom" title = "Video size is limited to 8MB with supported video formats including avi, mov and mp4. This parsing process will take few ten seconds to minutes depend on the length, qaulity of the uploaded video." style="margin-top: -7px">
+                </form>
+
+                <hr class="my-2" id = "seperate">
+                <span id="try">See More Examples</span>
+                <div class="row">
+                    <div>
+                        <center class="face">
+                            <img src="../static/video/Actor1.png" height="40%" width="40%" >
+                            <img src="../static/video/Actor2.png" height="36%" width="36%">
+                        </center>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm">
+                            <a href="/Example1">
+                                <button id="btn" type="button" class="btn btn-outline-dark" style = "margin-right: 60px">Actor 1</button>
+                            </a>
+                            <a href="/Example2">
+                                <button id="btn" type="button" class="btn btn-outline-dark">Actor 2</button>
+                            </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>
+        window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')
+    </script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(function() {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+
+        var user = document.querySelectorAll(".user");
+        var btn_user = document.getElementById("btn_user");
+        console.log(user)
+
+        btn_user.addEventListener("click", function() {
+            user[0].play();
+            user[1].play();
+        });
+
+        var input = document.getElementById('input');
+        var filename = document.getElementById('filename');
+
+        input.addEventListener('change', showFileName);
+        function showFileName( event ) {
+  
+          // the change event gives us the input it occurred in 
+          var input = event.srcElement;
+          // the input has an array of files in the `files` property, each one has a name that you can use. We're just using the name here.
+          var fileName = input.files[0].name;
+          
+          // use fileName however fits your app best, i.e. add it into a div
+          filename.textContent = fileName;
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
